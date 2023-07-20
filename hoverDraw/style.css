@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background-color: white;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.container a{
+    padding: 20px 30px;
+    font-size: 80px;
+    text-decoration: none;
+    background-color:white;
+    color: black;
+    border-radius: 20px;
+    position: relative;
+    z-index: 999;
+    transition-delay: 1.2s;
+    
+}
+.container a:before{
+  width: 100%;
+  height: 100%;
+  content: '';
+  background-color: black;
+  top: 0;
+  left: 0;
+  position: absolute;
+  transition: 1s;
+  z-index: -1;
+  transform-origin: top left;
+  transition-delay: 1.2s;
+  transform: scale(0);
+}
+.container a:hover{
+    color: white;
+}
+.container a:hover:before{
+   transform: scale(1);
+   
+} 
+.container a span{
+    position: absolute;
+    background-color: black;
+}
+.container a span:nth-child(1),
+.container a span:nth-child(3){
+    width: 100%;
+    height: 2px;   
+}
+.container a span:nth-child(1){
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+.container a:hover span:nth-child(1){
+     transform: scaleX(1);
+     transition: .7s;
+     transition-delay: 0s;
+}
+.container a:hover span:nth-child(3){
+    transform: scaleX(1);
+    transition: .9s;
+    transition-delay: .6s;
+}
+.container a span:nth-child(3){
+    bottom: 0;
+    right: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+.container a span:nth-child(2),
+.container a span:nth-child(4){
+    width: 2px ;
+    height: 100%;
+    
+}
+.container a span:nth-child(2){
+    top: 0;
+    right: 0;
+    transform: scaleY(0);
+    transition: .8s;
+    transform-origin: top;
+}
+.container a span:nth-child(4){
+    top: 0;
+    left: 0;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: .5s;
+}
+
+.container a:hover span:nth-child(2){
+   transition-delay: .5s;
+   transform: scaleY(1);
+}
+.container a:hover span:nth-child(4){
+    transition-delay: 1s;
+    transform: scaleY(1);
+ }
